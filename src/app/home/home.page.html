@@ -1,20 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-content>
+    <ion-card>
+      <p>
+        The following ion-icon has an embeeded imagen in the src. You can't see
+        it now, but this used to work with previous versions of ionic/Angular.
+        The src is now truncated.
+      </p>
+      <ion-icon *ngIf="this.logo" style="font-size: 10rem; max-width: 124px; height: 7vw; max-height: 100px"
+        [src]="this.logo"></ion-icon>
+      <p>
+        Update: after installing many versions. I've found that the only version
+        that works fine is v6.0.0. Starting from v6.0.1 and up to the latest
+        v6.5.0 the ion-icon src value gets truncated to 30 characters. I made my
+        experiments locally and replicated this in stackblitz too:
+      </p>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+      In conclusion, with Angular v14: <br />
+      <ul>
+        <li>"@ionic/angular": "6.0.0", -> works</li>
+        <li>"@ionic/angular": ">=6.0.1", -> fails</li>
+      </ul>
+    </ion-card>
+  </ion-content>
+</ion-app>
