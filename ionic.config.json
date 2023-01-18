@@ -1,0 +1,7 @@
+{
+  "name": "ionic-icons-dataurl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
